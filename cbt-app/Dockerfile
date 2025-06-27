@@ -1,15 +1,12 @@
-# Use official Python image with version 3.11
+# Use Python 3.11 to avoid pandas build errors
 FROM python:3.11-slim
 
-# Set working directory
 WORKDIR /app
 
-# Copy all project files to container
-COPY . .
-
-# Install dependencies
+COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Run your application
-CMD ["python", "cbt-app"]
+COPY . .
+
+CMD ["python", "app.py"]
