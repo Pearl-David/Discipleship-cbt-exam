@@ -12,4 +12,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Run your application
-CMD ["python", "app.py"]
+CMD ["python", "cbt-app"]
